@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+/* -----Reset----- */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* ----Whole Doc---- */
+body{
+    height: 100vh;
+    width: 100vw;
+    font-weight: 400;
+    overflow-x: hidden;
+    padding: 20px;
+    background-color: #e08ae0;
+}
+
+/* ---Show Button--- */
+.showbtn{
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+/* Buttons */
+.showbtn a{
+    text-decoration: none;
+    color: #522152;
+    position: absolute;
+    top: 0;
+    right: 25%;
+    transition: all 0.3s ease-in;
+}
+
+.showbtn a label{
+    width: 100px;
+    height: 100px;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.showbtn a:nth-child(1) label{
+    background-color:#e08ae0;
+    box-shadow: 5px 5px 8px #9c579c,
+    -5px -5px 10px #fcb1fc;
+}
+
+.showbtn a:nth-child(2) label{
+    background-color: #b85fb8;
+    box-shadow: 5px 5px 8px #753475,
+    -5px -5px 10px #fdb7fd;
+}
+
+/* Hide and Show */
+.showbtn a:nth-child(2),
+#showhide{
+    opacity: 0;
+    visibility: hidden;
+}
+
+#showhide:checked ~ .showbtn a:nth-child(2){
+    opacity: 1;
+    visibility: visible;
+}
+
+#showhide:checked ~ .login{
+    left: 0;
+}
+
+#showhide:checked ~ .showbtn a:nth-child(1){
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ---Login Form--- */
+.login{
+    position: relative;
+    width: 400px;
+    padding: 100px 50px;
+    margin: 60px auto;
+    background-color: #e08ae0;
+    box-shadow: 13px 13px 20px #9c579c,
+    -13px -13px 25px #fcb1fc;
+    left: -120%;
+    transition: all 0.5s ease-in;
+}
+
+/* Logo */
+.logo{
+    background: url(./img/logo.jpg);
+    background-size: 100px 100px;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 20%;
+    box-shadow: 
+    /* Logo Shadow */
+    0px 0px 2px #441f44,
+    /* Offset */
+    0px 0px 0px 6px #f1b8f1,
+    /* Bottom Right */
+    8px 8px 15px #6d366d,
+    /* Top Left */
+    -8px -8px 20px #fcb1fc;
+}
+
+/* Title */
+.title{
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding-top: 24px;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    color: #fcc4fc;
+}
+
+/* Input Fields */
+.fields{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.fields input{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.05rem;
+    color: #fff;
+    padding: 20px 10px 20px 35px;
+}
+
+.uname, .pwd{
+    margin-bottom: 30px;
+    box-shadow: inset 8px 8px 8px #9c579c,
+                inset -8px -8px 8px #fcb1fc;
+}
+
+.uname > i, .pwd > i{
+    font-size: 1.1rem;
+    color: #fcb1fc;
+    position: relative;
+    left: 20px;
+}
+
+/* Sign In Button */
+.sbtn{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #fcb1fc;
+    text-align: center;
+    background-color: #9c469c;
+    box-shadow: 8px 8px 20px #522152,
+                -8px -8px 30px #fcb1fc;
+    transition: all 0.3s ease-in;
+}
+
+.sbtn:hover{
+    background-color: #914e91;
+}
+
+/* Forgot Password */
+.forgot{
+    padding-top: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.forgot a{
+    text-decoration: none;
+    color: #fcc4fc;
+    font-size: 1rem;
+}
+
+/* -----Responsive----- */
+@media(max-width: 550px){
+    .login{
+        width: 280px;
+        padding: 70px 30px;
+    }
+
+    .fields input,
+    .fields i{
+        font-size: 0.8rem;
+    }
+
+    .sbtn,
+    .forgot a{
+        font-size: 0.9rem;
+    }
+}
